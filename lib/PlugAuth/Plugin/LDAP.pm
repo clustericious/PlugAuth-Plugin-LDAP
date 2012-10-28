@@ -67,14 +67,6 @@ sub check_credentials {
     return 0;
 }
 
-=head2 PlugAuth::Plugin::LDAP-E<gt>all_users
-
-Returns an empty list.
-
-=cut
-
-sub all_users { () }
-
 1;
 
 =head1 SEE ALSO
