@@ -18,7 +18,7 @@ when binding to the LDAP server.
 =head1 DESCRIPTION
 
 Handle authentication only from LDAP server.
-Everything else is handled by L<PlugAuth::Plugin::FlatFiles>
+Everything else is handled by L<PlugAuth::Plugin::FlatAuth>
 (e.g. authorization, groups, etc).
 
 =cut
@@ -71,6 +71,6 @@ sub check_credentials {
 
 =head1 SEE ALSO
 
-L<PlugAuth>, L<PlugAuth::Routes>, L<PlugAuth::Plugin::FlatFiles>
+L<PlugAuth>, L<PlugAuth::Routes>, L<PlugAuth::Plugin::FlatAuth>
 
 =cut
