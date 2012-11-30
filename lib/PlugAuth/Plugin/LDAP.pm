@@ -5,8 +5,9 @@ package PlugAuth::Plugin::LDAP;
 
 =head1 SYNOPSIS
 
-Sample LDAP configuration :
+In your PlugAuth.conf file:
 
+ ---
  ldap :
    server : ldap://198.118.255.141:389
    dn : uid=%s, ou=people, dc=users, dc=eosdis, dc=nasa, dc=gov
