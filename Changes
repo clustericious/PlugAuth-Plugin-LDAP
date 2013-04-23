@@ -1,4 +1,8 @@
 Revision history for PlugAuth-Plugin-LDAP
 
+0.02      2013-04-23 17:13:04 America/New_York
+  - use MakeMaker instead of ModuleBuild
+  - use [ACPS::RPM]
+
 0.01      2012-11-29 15:17:49 America/New_York
   - initial version

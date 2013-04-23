@@ -10,16 +10,14 @@ use ExtUtils::MakeMaker 6.30;
 
 my %WriteMakefileArgs = (
   "ABSTRACT" => "LDAP back end for PlugAuth",
-  "AUTHOR" => "Graham Ollis <gollis\@sesda2.com>",
+  "AUTHOR" => "Graham Ollis <gollis\@sesda3.com>",
   "BUILD_REQUIRES" => {
     "FindBin" => 0,
-    "Module::Build" => "0.3601",
     "Test::Mojo" => 0,
     "Test::More" => 0
   },
   "CONFIGURE_REQUIRES" => {
-    "ExtUtils::MakeMaker" => "6.30",
-    "Module::Build" => "0.3601"
+    "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "PlugAuth-Plugin-LDAP",
   "EXE_FILES" => [],
@@ -33,7 +31,7 @@ my %WriteMakefileArgs = (
     "PlugAuth::Role::Plugin" => 0,
     "Role::Tiny::With" => 0
   },
-  "VERSION" => "0.01",
+  "VERSION" => "0.02",
   "test" => {
     "TESTS" => "t/*.t"
   }

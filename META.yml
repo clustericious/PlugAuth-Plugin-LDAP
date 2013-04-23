@@ -1,17 +1,15 @@
 ---
 abstract: 'LDAP back end for PlugAuth'
 author:
-  - 'Graham Ollis <gollis@sesda2.com>'
+  - 'Graham Ollis <gollis@sesda3.com>'
 build_requires:
   FindBin: 0
-  Module::Build: 0.3601
   Test::Mojo: 0
   Test::More: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
-  Module::Build: 0.3601
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300021, CPAN::Meta::Converter version 2.120921'
 license: restrictive
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -25,4 +23,4 @@ requires:
   PlugAuth::Role::Plugin: 0
   Role::Tiny::With: 0
   perl: v5.10.0
-version: 0.01
+version: 0.02

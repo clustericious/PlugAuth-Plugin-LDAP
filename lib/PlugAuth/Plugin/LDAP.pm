@@ -1,7 +1,7 @@
 package PlugAuth::Plugin::LDAP;
 
 # ABSTRACT: LDAP back end for PlugAuth
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 
 use strict;
@@ -53,7 +53,7 @@ PlugAuth::Plugin::LDAP - LDAP back end for PlugAuth
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -86,7 +86,7 @@ L<PlugAuth>, L<PlugAuth::Routes>, L<PlugAuth::Plugin::FlatAuth>
 
 =head1 AUTHOR
 
-Graham Ollis <gollis@sesda2.com>
+Graham Ollis <gollis@sesda3.com>
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,10 +1,10 @@
 {
    "abstract" : "LDAP back end for PlugAuth",
    "author" : [
-      "Graham Ollis <gollis@sesda2.com>"
+      "Graham Ollis <gollis@sesda3.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.300028, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Zilla version 4.300021, CPAN::Meta::Converter version 2.120921",
    "license" : [
       "restricted"
    ],
@@ -14,15 +14,9 @@
    },
    "name" : "PlugAuth-Plugin-LDAP",
    "prereqs" : {
-      "build" : {
-         "requires" : {
-            "Module::Build" : "0.3601"
-         }
-      },
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.30",
-            "Module::Build" : "0.3601"
+            "ExtUtils::MakeMaker" : "6.30"
          }
       },
       "runtime" : {
@@ -45,6 +39,6 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.01"
+   "version" : "0.02"
 }
 
