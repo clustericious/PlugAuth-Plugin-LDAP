@@ -1,7 +1,7 @@
 package PlugAuth::Plugin::LDAP;
 
 # ABSTRACT: LDAP back end for PlugAuth
-our $VERSION = '0.02'; # VERSION
+our $VERSION = '0.03'; # VERSION
 
 
 use strict;
@@ -43,8 +43,8 @@ sub check_credentials {
 
 1;
 
-
 __END__
+
 =pod
 
 =head1 NAME
@@ -53,7 +53,7 @@ PlugAuth::Plugin::LDAP - LDAP back end for PlugAuth
 
 =head1 VERSION
 
-version 0.02
+version 0.03
 
 =head1 SYNOPSIS
 
@@ -62,7 +62,7 @@ In your PlugAuth.conf file:
  ---
  ldap :
    server : ldap://198.118.255.141:389
-   dn : uid=%s, ou=people, dc=users, dc=eosdis, dc=nasa, dc=gov
+   dn : uid=%s, ou=people, dc=users, dc=example, dc=com
    authoritative : 1
 
 Note that %s in the dn will be replaced with the username
@@ -90,8 +90,9 @@ Graham Ollis <gollis@sesda3.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by NASA GSFC.  No
-license is granted to other entities.
+This software is copyright (c) 2012 by NASA GSFC.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
-
