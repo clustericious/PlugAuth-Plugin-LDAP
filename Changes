@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Documentation
 
 0.02      2013-04-23 17:13:04 America/New_York
   - use MakeMaker instead of ModuleBuild

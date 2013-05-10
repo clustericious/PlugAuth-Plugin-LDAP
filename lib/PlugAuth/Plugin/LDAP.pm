@@ -10,7 +10,7 @@ In your PlugAuth.conf file:
  ---
  ldap :
    server : ldap://198.118.255.141:389
-   dn : uid=%s, ou=people, dc=users, dc=eosdis, dc=nasa, dc=gov
+   dn : uid=%s, ou=people, dc=users, dc=eosdis, dc=example, dc=com
    authoritative : 1
 
 Note that %s in the dn will be replaced with the username
