@@ -49,7 +49,7 @@ sub bind
 {
   my($self, $dn, %args) = @_;
 
-  if($dn =~ /^uid=([a-z]+), ou=people, dc=users, dc=eosdis, dc=example, dc=com$/)
+  if($dn =~ /^uid=([a-z]+), ou=people, dc=users, dc=example, dc=com$/)
   { $net_ldap_saw_user = $1 }
   else
   { $net_ldap_saw_user = '---' }
