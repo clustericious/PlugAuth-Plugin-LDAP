@@ -1,5 +1,8 @@
 Revision history for PlugAuth-Plugin-LDAP
 
+0.04      2013-05-30 15:18:19 America/New_York
+  - Fixes for MSWin32
+
 0.03      2013-05-10 13:04:22 America/New_York
   - Documentation
 

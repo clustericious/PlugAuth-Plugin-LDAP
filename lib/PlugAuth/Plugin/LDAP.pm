@@ -1,7 +1,7 @@
 package PlugAuth::Plugin::LDAP;
 
 # ABSTRACT: LDAP back end for PlugAuth
-our $VERSION = '0.03'; # VERSION
+our $VERSION = '0.04'; # VERSION
 
 
 use strict;
@@ -43,8 +43,8 @@ sub check_credentials {
 
 1;
 
-__END__
 
+__END__
 =pod
 
 =head1 NAME
@@ -53,7 +53,7 @@ PlugAuth::Plugin::LDAP - LDAP back end for PlugAuth
 
 =head1 VERSION
 
-version 0.03
+version 0.04
 
 =head1 SYNOPSIS
 
@@ -96,3 +96,4 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
+
