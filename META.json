@@ -39,6 +39,17 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.04"
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/plicease/plugauth-plugin-ldap/issues"
+      },
+      "homepage" : "http://perl.wdlabs.com/PlugAuth-Plugin-LDAP/",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/plicease/plugauth-plugin-ldap.git",
+         "web" : "https://github.com/plicease/plugauth-plugin-ldap"
+      }
+   },
+   "version" : "0.05"
 }
 

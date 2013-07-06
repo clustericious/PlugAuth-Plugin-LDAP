@@ -1,7 +1,7 @@
 package PlugAuth::Plugin::LDAP;
 
 # ABSTRACT: LDAP back end for PlugAuth
-our $VERSION = '0.04'; # VERSION
+our $VERSION = '0.05'; # VERSION
 
 
 use strict;
@@ -53,7 +53,7 @@ PlugAuth::Plugin::LDAP - LDAP back end for PlugAuth
 
 =head1 VERSION
 
-version 0.04
+version 0.05
 
 =head1 SYNOPSIS
 
