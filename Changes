@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - update metadata
 
 0.04      2013-05-30 15:18:19 America/New_York
   - Fixes for MSWin32
