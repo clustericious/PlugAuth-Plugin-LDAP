@@ -7,6 +7,8 @@ Makefile.PL
 README
 dist.ini
 lib/PlugAuth/Plugin/LDAP.pm
+t/00_diag.t
+t/00_diag.txt
 t/10-ldap.t
 t/data/10/extra.conf
 t/data/10/group.txt
@@ -27,3 +29,4 @@ xt/release/pod_spelling_common.t
 xt/release/pod_spelling_system.t
 xt/release/release.yml
 xt/release/strict.t
+xt/release/version.t

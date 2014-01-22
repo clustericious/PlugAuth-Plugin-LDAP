@@ -2,7 +2,7 @@ NAME
     PlugAuth::Plugin::LDAP - LDAP back end for PlugAuth
 
 VERSION
-    version 0.05
+    version 0.06
 
 SYNOPSIS
     In your PlugAuth.conf file:

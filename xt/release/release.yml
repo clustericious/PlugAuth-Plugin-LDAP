@@ -2,7 +2,12 @@
 pod_spelling_system:
   # list of words that are spelled correctly
   # (regardless of what spell check thinks)
-  stopwords: []
+  stopwords:
+    - GSFC
+    - LDAP
+    - PlugAuth
+    - conf
+    - dn
 
 pod_coverage:
   # format is "Class#method" or "Class", regex allowed
