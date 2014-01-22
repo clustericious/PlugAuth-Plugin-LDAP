@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Mojo 4.50 compat
 
 0.05      2013-07-06 17:58:32 America/New_York
   - update metadata
