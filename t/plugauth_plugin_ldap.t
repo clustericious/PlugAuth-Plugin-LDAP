@@ -95,6 +95,7 @@ sub bind
 
 package Net::LDAP::Message;
 
+no warnings;
 sub code { shift->{code} }
 sub error { shift->{code} ? 'unauthorized' : 'authorized' }
 
