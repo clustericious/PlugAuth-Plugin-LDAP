@@ -1,10 +1,9 @@
+Clustericious
 ExtUtils::MakeMaker
-FindBin
 Log::Log4perl
+Mojolicious
 Net::LDAP
 PlugAuth
-PlugAuth::Role::Auth
-PlugAuth::Role::Plugin
 Role::Tiny::With
 Test::Mojo
 Test::More
