@@ -4,6 +4,6 @@ Log::Log4perl
 Mojolicious
 Net::LDAP
 PlugAuth
-Role::Tiny::With
-Test::Mojo
+Role::Tiny
+Test::Clustericious::Cluster
 Test::More

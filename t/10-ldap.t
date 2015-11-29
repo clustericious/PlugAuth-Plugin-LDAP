@@ -1,25 +1,24 @@
 use strict;
 use warnings;
 use 5.010;
-use Test::Clustericious::Log;
 use Test::Clustericious::Cluster;
-use FindBin ();
-BEGIN { require "$FindBin::Bin/etc/setup.pl" }
-use Test::More tests => 15;
-use Test::Mojo;
+use Test::More tests => 16;
 
-my $t = Test::Mojo->new('PlugAuth');
+my $cluster = Test::Clustericious::Cluster->new;
 
-use YAML ();
-note YAML::Dump($t->app->config);
+$cluster->create_cluster_ok('PlugAuth');
+my $t = $cluster->t;
 
 our $net_ldap_saw_user;
 our $net_ldap_saw_password;
 
-my $port = eval { $t->ua->server->url->port } // $t->ua->app_url->port;
+my($url) = map { $_->clone } @{ $cluster->urls };
+
+
 
 # good user, good password
-$t->get_ok("http://optimus:matrix\@localhost:$port/auth")
+$url->userinfo('optimus:matrix');
+$t->get_ok("$url/auth")
   ->status_is(200)
   ->content_is("ok", 'auth succeeded');
 
@@ -27,7 +26,8 @@ is $net_ldap_saw_user, 'optimus', 'user = optimus';
 is $net_ldap_saw_password, 'matrix', 'password = matrix';
 
 # good user, bad password
-$t->get_ok("http://optimus:badguess\@localhost:$port/auth")
+$url->userinfo('optimus:badguess');
+$t->get_ok("$url/auth")
   ->status_is(403)
   ->content_is("not ok", 'auth succeeded');
 
@@ -35,7 +35,8 @@ is $net_ldap_saw_user, 'optimus', 'user = optimus';
 is $net_ldap_saw_password, 'badguess', 'password = badguess';
 
 # good user, bad password
-$t->get_ok("http://bogus:matrix\@localhost:$port/auth")
+$url->userinfo('bogus:matrix');
+$t->get_ok("$url/auth")
   ->status_is(403)
   ->content_is("not ok", 'auth succeeded');
 
@@ -43,6 +44,28 @@ is $net_ldap_saw_user, 'bogus', 'user = bogus';
 is $net_ldap_saw_password, 'matrix', 'password = matrix';
 
 __DATA__
+
+@@ etc/PlugAuth.conf
+---
+url: <%= cluster->url %>
+
+% for my $name (qw( group host resource ) ) {
+%   my $file = file home, $name;
+%   $file->spew('');
+<%= $name %>_file: <%= $file %>
+% }
+
+% do {
+%   my $file = file home, 'user';
+%   $file->spew("optimus:RjLie.H/DrOHE\n");
+user_file: <%= $file %>
+% };
+
+ldap:
+  authoritative: 1
+  dn: 'uid=%s, ou=people, dc=users, dc=example, dc=com'
+  server: ldap://192.168.1.1:389
+
 
 @@ lib/Net/LDAP.pm
 package Net::LDAP;
