@@ -1,6 +1,11 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Updated tests to use YAML instead of JSON in preeration
+    for the latter being deprecated.
+  - Use Test::Clustericious::Cluster instead of Test::Mojo
+  - Moved repository to clustericious org on github
+    (updated meta appropriately)
 
 0.06      2014-01-22 17:45:36 America/New_York
   - Mojo 4.50 compat

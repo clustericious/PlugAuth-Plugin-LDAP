@@ -1,6 +1,8 @@
 use strict;
 use warnings;
-use v5.10;
+use 5.010;
+use Test::Clustericious::Log;
+use Test::Clustericious::Cluster;
 use FindBin ();
 BEGIN { require "$FindBin::Bin/etc/setup.pl" }
 use Test::More tests => 15;
@@ -8,10 +10,13 @@ use Test::Mojo;
 
 my $t = Test::Mojo->new('PlugAuth');
 
-my $port = eval { $t->ua->server->url->port } // $t->ua->app_url->port;
+use YAML ();
+note YAML::Dump($t->app->config);
 
-my $net_ldap_saw_user;
-my $net_ldap_saw_password;
+our $net_ldap_saw_user;
+our $net_ldap_saw_password;
+
+my $port = eval { $t->ua->server->url->port } // $t->ua->app_url->port;
 
 # good user, good password
 $t->get_ok("http://optimus:matrix\@localhost:$port/auth")
@@ -37,9 +42,14 @@ $t->get_ok("http://bogus:matrix\@localhost:$port/auth")
 is $net_ldap_saw_user, 'bogus', 'user = bogus';
 is $net_ldap_saw_password, 'matrix', 'password = matrix';
 
+__DATA__
+
+@@ lib/Net/LDAP.pm
 package Net::LDAP;
 
-BEGIN { $INC{'Net/LDAP.pm'} = __FILE__ }
+use strict;
+use warnings;
+use Net::LDAP::Message;
 
 sub new
 {
@@ -51,17 +61,18 @@ sub bind
   my($self, $dn, %args) = @_;
 
   if($dn =~ /^uid=([a-z]+), ou=people, dc=users, dc=example, dc=com$/)
-  { $net_ldap_saw_user = $1 }
+  { $main::net_ldap_saw_user = $1 }
   else
-  { $net_ldap_saw_user = '---' }
-  $net_ldap_saw_password = $args{password};
+  { $main::net_ldap_saw_user = '---' }
+  $main::net_ldap_saw_password = $args{password};
 
-  my $code = !($net_ldap_saw_user eq 'optimus' && $net_ldap_saw_password eq 'matrix');
+  my $code = !($main::net_ldap_saw_user eq 'optimus' && $main::net_ldap_saw_password eq 'matrix');
   bless { code => $code }, 'Net::LDAP::Message';
 }
-
 
 package Net::LDAP::Message;
 
 sub code { shift->{code} }
 sub error { shift->{code} ? 'unauthorized' : 'authorized' }
+
+1;
