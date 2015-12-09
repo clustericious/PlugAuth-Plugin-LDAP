@@ -1,4 +1,4 @@
-# PlugAuth::Plugin::LDAP
+# PlugAuth::Plugin::LDAP [![Build Status](https://secure.travis-ci.org/clustericious/PlugAuth-Plugin-LDAP.png)](http://travis-ci.org/clustericious/PlugAuth-Plugin-LDAP)
 
 LDAP back end for PlugAuth
 
