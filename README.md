@@ -33,7 +33,7 @@ Given a user and password, check to see if the password is correct.
 
 # AUTHOR
 
-Graham Ollis &lt;gollis@sesda3.com>
+Graham Ollis <gollis@sesda3.com>
 
 # COPYRIGHT AND LICENSE
 
