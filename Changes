@@ -1,6 +1,8 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+
+0.08      2016-07-20 15:27:00 -0400
   - Mojo 7.x compatability
 
 0.07      2015-11-29 16:08:01 -0500
