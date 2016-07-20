@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Mojo 7.x compatability
 
 0.07      2015-11-29 16:08:01 -0500
   - Updated tests to use YAML instead of JSON in preeration

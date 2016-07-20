@@ -14,11 +14,16 @@ our $net_ldap_saw_password;
 
 my($url) = map { $_->clone } @{ $cluster->urls };
 
-
+sub url ($$@) {
+  my($url, $path,@rest) = @_;
+  $url = $url->clone;
+  $url->path($path);
+  wantarray ? ($url, @rest) : $url;
+}
 
 # good user, good password
 $url->userinfo('optimus:matrix');
-$t->get_ok("$url/auth")
+$t->get_ok(url $url, "/auth")
   ->status_is(200)
   ->content_is("ok", 'auth succeeded');
 
@@ -27,7 +32,7 @@ is $net_ldap_saw_password, 'matrix', 'password = matrix';
 
 # good user, bad password
 $url->userinfo('optimus:badguess');
-$t->get_ok("$url/auth")
+$t->get_ok(url $url, "auth")
   ->status_is(403)
   ->content_is("not ok", 'auth succeeded');
 
@@ -36,7 +41,7 @@ is $net_ldap_saw_password, 'badguess', 'password = badguess';
 
 # good user, bad password
 $url->userinfo('bogus:matrix');
-$t->get_ok("$url/auth")
+$t->get_ok(url $url, "auth")
   ->status_is(403)
   ->content_is("not ok", 'auth succeeded');
 
