@@ -1,9 +1,0 @@
-Clustericious
-ExtUtils::MakeMaker
-Log::Log4perl
-Mojolicious
-Net::LDAP
-PlugAuth
-Role::Tiny
-Test::Clustericious::Cluster
-Test::More
