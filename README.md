@@ -1,6 +1,6 @@
 # PlugAuth::Plugin::LDAP [![Build Status](https://secure.travis-ci.org/clustericious/PlugAuth-Plugin-LDAP.png)](http://travis-ci.org/clustericious/PlugAuth-Plugin-LDAP)
 
-LDAP back end for PlugAuth
+(Deprecated) LDAP back end for PlugAuth
 
 # SYNOPSIS
 
@@ -16,6 +16,9 @@ Note that %s in the dn will be replaced with the username
 when binding to the LDAP server.
 
 # DESCRIPTION
+
+**NOTE**: This module has been deprecated, and may be removed on or after 31 December 2018.
+Please see [https://github.com/clustericious/Clustericious/issues/46](https://github.com/clustericious/Clustericious/issues/46).
 
 Handle authentication only from LDAP server.
 Everything else is handled by [PlugAuth::Plugin::FlatAuth](https://metacpan.org/pod/PlugAuth::Plugin::FlatAuth)
