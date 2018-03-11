@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - Deprecated. See https://github.com/clustericious/Clustericious/issues/46
 
 0.08      2016-07-20 15:27:00 -0400
   - Mojo 7.x compatability
